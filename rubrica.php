@@ -76,7 +76,7 @@ function convertDateFormat($date_of_birth) {
             <td><? echo $person["id"] ?></td>
             <td><? echo $person["nome"] ?></td>
             <td><? echo $person['cognome'] ?></td>
-            <td><? echo $person['telefono'] ?></td>
+            <td><? if($person['telefono'] == 0) echo "nessun numero di telefono"; else echo $person['telefono'] ?></td>
             <td><? echo $person['email'] ?></td>
             <td><? echo convertDateFormat($person['data_di_nascita']) ?></td>
             <td><? if($person['sesso'] == 0): ?>

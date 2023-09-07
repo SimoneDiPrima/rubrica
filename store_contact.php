@@ -9,6 +9,7 @@ include 'includes/db_connection.php';
 
  if($conn && $conn->connect_error){
   echo "Connection failed" . $conn->connect_error;
+  
    die();
 }   
 $nome = $_POST['nome'] ?? '';
@@ -47,7 +48,7 @@ function storeUserData($nome, $surname, $email, $sex, $phone, $city, $date_of_bi
         echo "Errore durante il salvataggio dei dati.". mysqli_error($conn);
     }
 
-$sql = "INSERT INTO users (nome,cognome,email,sesso,telefono,città,data_di_nascita) VALUES ('$name_sanitizzato', '$surname_sanitizzato','$email_sanitizzato','$sex_sanitizzato','$phone_sanitizzato','$city_sanitizzato','$date_sanitizzato')";
+$sql = "INSERT INTO users (nome,cognome,email,sesso,telefono,città,data_di_nascita) VALUES ('$nome', '$surname','$email','$sex','$phone','$city','$date')";
 
 
 if (mysqli_query($conn,$sql)) {

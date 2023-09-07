@@ -91,7 +91,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){    http_response_code(405); //METHOD N
         <h3>Email: <?php echo $email?></h3>
         <h3>Genere: <?php echo $sex ?></h3>
        
-        <h4>Telefono: <?php echo $phone?></h4>
+        <h4>Telefono: <? if($phone == 0) echo " nessun numero di telefono"; else echo $phone ?></h4>
         <h4>Compleanno: <?php echo convertDateFormat($date_of_birth) ?></h4>
         <h4>città: <?php echo $city ?></h4>
           

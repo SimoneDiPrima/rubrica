@@ -99,7 +99,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){    http_response_code(405); //METHOD N
         <label class="form-label mt-5" for="data_di_nascita" >Data di nascita:</label><br>
         <input class="form-control" type="date" id="data_di_nascita" name="data_di_nascita" value="<?php echo $date_of_birth ?>"><br><br>
         <label class="form-label" for="telefono">Telefono:</label><br>
-        <input class="form-control" type="text"  id="telefono" name="telefono" value="<?php echo $phone ?>"  minlength="9" maxlength="15"><br><br>
+        <input class="form-control" type="text"  id="telefono" name="telefono" value="<? if($phone == 0) echo " nessun numero di telefono"; else echo $phone ?>"  minlength="9" maxlength="15"><br><br>
         <label class="form-label" for="città">Citta:</label><br>
         <select class="col-4" name="città" id="città" value="<?php echo $city ?>">
 
